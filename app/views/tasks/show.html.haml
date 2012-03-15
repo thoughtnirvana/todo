@@ -1,0 +1,32 @@
+= stylesheet_link_tag 'tasks'
+%p#notice= notice
+
+%h3= @task.name
+
+.ui-widget.grid-widget.half
+  .ui-widget-header.ui-corner-top= @task.name 
+  .ui-widget-content
+    %table
+      %tr
+        %td Name
+        %td= @task.name
+      %tr
+        %td Description
+        %td= @task.description
+      %tr
+        %td Deadline
+        %td= @task.deadline
+      %tr
+        %td Completed
+        %td= @task.completed
+
+  .ui-widget-footer
+    #button
+      != icon_button 'Edit',
+        edit_task_path(@task),
+        { class: 'ui-icon ui-icon-pencil' },
+        { class: 'fg-button ui-button ui-state-default ui-corner-all' }
+      != icon_button 'Back',
+        :back,
+        { class: 'ui-icon ' },
+        { class: 'fg-button ui-button ui-state-default ui-corner-all' }

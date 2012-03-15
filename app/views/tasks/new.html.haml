@@ -1,0 +1,16 @@
+= stylesheet_link_tag 'tasks'
+= javascript_include_tag "tasks"
+
+%h3 New task
+
+.ui-widget.grid-widget.half
+  .ui-widget-header.ui-corner-top New Task
+  .ui-widget-content
+    = render 'form'
+  .ui-widget-footer
+    #button
+      != icon_button 'Back',
+        :back,
+        { class: 'ui-icon ' },
+        { class: 'fg-button ui-button ui-state-default ui-corner-all' }
+

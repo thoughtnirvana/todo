@@ -1,0 +1,33 @@
+= stylesheet_link_tag 'tasks'
+
+%h3 Task List
+
+.ui-widget.grid-widget
+  .ui-widget-header.ui-corner-top Listing Tasks
+  .ui-widget-content
+    %table
+      %tr
+        %th Name
+        %th Description
+        %th Deadline
+        %th Status
+        %th
+        %th
+        %th
+
+      - @tasks.each do |task|
+        %tr
+          %td= task.name
+          %td= task.description
+          %td= task.deadline
+          %td= task.completed
+          %td= link_to 'Show', task
+          %td= link_to 'Edit', edit_task_path(task)
+          %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+
+  .ui-widget-footer
+    #button
+      != icon_button 'New Task',
+        new_task_path,
+        { class: 'ui-icon ui-icon-pencil' },
+        { class: 'fg-button ui-button ui-state-default ui-corner-all edit-contact' }

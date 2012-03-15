@@ -1,0 +1,474 @@
+/* Taken from Twitter's bootstrap - http://twitter.github.com/bootstrap/
+ * Tables.less
+ * Tables for, you guessed it, tabular data
+ * ---------------------------------------- */
+table {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 13.5px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  border-bottom-width: 2px;
+}
+.zebra-striped tbody tr:nth-child(odd) td {
+  background-color: #f9f9f9;
+}
+.zebra-striped tbody tr:hover td {
+  background-color: #f5f5f5;
+}
+.zebra-striped .header {
+  cursor: pointer;
+}
+.zebra-striped .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: #000 transparent;
+  visibility: hidden;
+}
+.zebra-striped .headerSortUp, .zebra-striped .headerSortDown {
+  background-color: rgba(141, 192, 219, 0.25);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+.zebra-striped .header:hover:after {
+  visibility: visible;
+}
+.zebra-striped .headerSortDown:after, .zebra-striped .headerSortDown:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+.zebra-striped .headerSortUp:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000;
+  visibility: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+table .blue {
+  color: #049cdb;
+  border-bottom-color: #049cdb;
+}
+table .headerSortUp.blue, table .headerSortDown.blue {
+  background-color: #ade6fe;
+}
+table .green {
+  color: #46a546;
+  border-bottom-color: #46a546;
+}
+table .headerSortUp.green, table .headerSortDown.green {
+  background-color: #cdeacd;
+}
+table .red {
+  color: #9d261d;
+  border-bottom-color: #9d261d;
+}
+table .headerSortUp.red, table .headerSortDown.red {
+  background-color: #f4c8c5;
+}
+table .yellow {
+  color: #ffc40d;
+  border-bottom-color: #ffc40d;
+}
+table .headerSortUp.yellow, table .headerSortDown.yellow {
+  background-color: #fff6d9;
+}
+table .orange {
+  color: #f89406;
+  border-bottom-color: #f89406;
+}
+table .headerSortUp.orange, table .headerSortDown.orange {
+  background-color: #fee9cc;
+}
+table .purple {
+  color: #7a43b6;
+  border-bottom-color: #7a43b6;
+}
+table .headerSortUp.purple, table .headerSortDown.purple {
+  background-color: #e2d5f0;
+}
+
+
+/* Patterns.less
+ * Repeatable UI elements outside the base styles provided from the scaffolding
+ * ---------------------------------------------------------------------------- */
+.alert-message {
+  background-color: rgba(0, 0, 0, 0.15);
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.15)));
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#15000000')";
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#15000000')";
+  background-color: #e6e6e6;
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.alert-message p {
+  color: #fff;
+  margin-bottom: 0;
+}
+.alert-message p + p {
+  margin-top: 5px;
+}
+.alert-message.error {
+  background-color: #d83a2e;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#e4776f), to(#d83a2e));
+  background-image: -moz-linear-gradient(#e4776f, #d83a2e);
+  background-image: -ms-linear-gradient(#e4776f, #d83a2e);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e4776f), color-stop(100%, #d83a2e));
+  background-image: -webkit-linear-gradient(#e4776f, #d83a2e);
+  background-image: -o-linear-gradient(#e4776f, #d83a2e);
+  background-image: linear-gradient(#e4776f, #d83a2e);
+  border-bottom-color: #b32b21;
+}
+.alert-message.warning {
+  background-color: #ffd040;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffe38d), to(#ffd040));
+  background-image: -moz-linear-gradient(#ffe38d, #ffd040);
+  background-image: -ms-linear-gradient(#ffe38d, #ffd040);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffe38d), color-stop(100%, #ffd040));
+  background-image: -webkit-linear-gradient(#ffe38d, #ffd040);
+  background-image: -o-linear-gradient(#ffe38d, #ffd040);
+  background-image: linear-gradient(#ffe38d, #ffd040);
+  border-bottom-color: #ffc40d;
+}
+.alert-message.success {
+  background-color: #62bc62;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#97d397), to(#62bc62));
+  background-image: -moz-linear-gradient(#97d397, #62bc62);
+  background-image: -ms-linear-gradient(#97d397, #62bc62);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #97d397), color-stop(100%, #62bc62));
+  background-image: -webkit-linear-gradient(#97d397, #62bc62);
+  background-image: -o-linear-gradient(#97d397, #62bc62);
+  background-image: linear-gradient(#97d397, #62bc62);
+  border-bottom-color: #46a546;
+}
+.alert-message.info {
+  background-color: #04aef4;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#62cffc), to(#04aef4));
+  background-image: -moz-linear-gradient(#62cffc, #04aef4);
+  background-image: -ms-linear-gradient(#62cffc, #04aef4);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #62cffc), color-stop(100%, #04aef4));
+  background-image: -webkit-linear-gradient(#62cffc, #04aef4);
+  background-image: -o-linear-gradient(#62cffc, #04aef4);
+  background-image: linear-gradient(#62cffc, #04aef4);
+  border-bottom-color: #049cdb;
+}
+.alert-message .close {
+  float: right;
+  margin-top: -2px;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ffffff;
+  filter: alpha(opacity=20);
+  -khtml-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+}
+.alert-message .close:hover {
+  text-decoration: none;
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}
+.block-message {
+  margin-bottom: 18px;
+  padding: 14px;
+  color: #404040;
+  color: rgba(0, 0, 0, 0.8);
+  *color: #404040;
+  /* IE 6-7 */
+
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.block-message p {
+  color: #404040;
+  color: rgba(0, 0, 0, 0.8);
+  *color: #404040;
+  /* IE 6-7 */
+
+  margin-right: 30px;
+  margin-bottom: 0;
+}
+.block-message ul {
+  margin-bottom: 0;
+}
+.block-message strong {
+  display: block;
+}
+.block-message.error {
+  background: #f8dcda;
+  border: 1px solid #f4c8c5;
+}
+.block-message.warning {
+  background: #fff0c0;
+  border: 1px solid #ffe38d;
+}
+.block-message.success {
+  background: #dff1df;
+  border: 1px solid #bbe2bb;
+}
+.block-message.info {
+  background: #c7eefe;
+  border: 1px solid #ade6fe;
+}
+
+div.error {
+  background: #fae5e3;
+  padding: 10px 0;
+  margin: -10px 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+div.error > label, form div.error span.help-inline, form div.error span.help-block {
+  color: #9d261d;
+}
+div.error input[type=text], form div.error input[type=password], form div.error textarea {
+  border-color: #c87872;
+  -webkit-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+  -moz-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+  box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+}
+div.error input[type=text]:focus, form div.error input[type=password]:focus, form div.error textarea:focus {
+  border-color: #b9554d;
+  -webkit-box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+  -moz-box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+  box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+}
+div.error .input-prepend span.add-on, form div.error .input-append span.add-on {
+  background: #f4c8c5;
+  border-color: #c87872;
+  color: #b9554d;
+}
+
+/* Preboot.less
+ * Variables and mixins to pre-ignite any new web development project
+ * ------------------------------------------------------------------ */
+ul, ol {
+  margin: 0 0 18px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+li {
+  line-height: 18px;
+  color: #808080;
+}
+ul.unstyled {
+  list-style: none;
+  margin-left: 0;
+}
+dl {
+  margin-bottom: 18px;
+}
+dl dt, dl dd {
+  line-height: 18px;
+}
+dl dt {
+  font-weight: bold;
+}
+dl dd {
+  margin-left: 9px;
+}
+hr {
+  margin: 0 0 19px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
+strong {
+  font-style: inherit;
+  font-weight: bold;
+  line-height: inherit;
+}
+em {
+  font-style: italic;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.muted {
+  color: #e6e6e6;
+}
+blockquote {
+  margin-bottom: 18px;
+  border-left: 5px solid #eee;
+  padding-left: 15px;
+}
+blockquote p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 0;
+}
+blockquote small {
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  color: #bfbfbf;
+}
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+address {
+  display: block;
+  line-height: 18px;
+  margin-bottom: 18px;
+}
+code, pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Andale Mono, Courier New, monospace;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+code {
+  background-color: #fee9cc;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 1px 3px;
+}
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 17px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre-wrap;
+}
+/* Forms.less
+ * Base styles for various input types, form layouts, and states
+ * ------------------------------------------------------------- */
+form fieldset legend {
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+  *margin: 0 0 5px 145px;
+  /* IE6-7 */
+
+  *line-height: 1.5;
+  /* IE6-7 */
+
+  color: #404040;
+}
+.twipsy {
+  display: block;
+  position: absolute;
+  visibility: visible;
+  padding: 5px;
+  font-size: 11px;
+  z-index: 1000;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+.twipsy.above .twipsy-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000000;
+}
+.twipsy.left .twipsy-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #000000;
+}
+.twipsy.below .twipsy-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #000000;
+}
+.twipsy.right .twipsy-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #000000;
+}
+.twipsy-inner {
+  padding: 3px 8px;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  max-width: 200px;
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.twipsy-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
