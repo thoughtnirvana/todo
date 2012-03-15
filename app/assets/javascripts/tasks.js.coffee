@@ -6,3 +6,10 @@
 $ ->
   # Set date
   window.setDate "#task_deadline"
+
+  $(".colored").each ->
+    if $(this).text() == "true"
+      $(this).css('background-color','#00af33')
+    else
+      $(this).css('background-color','#cd0000')
+

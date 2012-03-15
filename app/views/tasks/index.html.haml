@@ -1,4 +1,5 @@
 = stylesheet_link_tag 'tasks'
+= javascript_include_tag "tasks"
 
 %h3 Task List
 
@@ -20,7 +21,7 @@
           %td= task.name
           %td= task.description
           %td= task.deadline
-          %td= task.completed
+          %td.colored= task.completed
           %td= link_to 'Show', task
           %td= link_to 'Edit', edit_task_path(task)
           %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
