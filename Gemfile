@@ -27,12 +27,15 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem 'cucumber-rails', :git => 'git://github.com/cucumber/cucumber-rails.git'
+end
+
 group :test, :development do
   gem 'cover_me'
-  gem 'rspec-rails'
-  gem 'rspec'
+  gem 'rspec-rails', :git => 'git://github.com/rspec/rspec-rails.git'
   gem 'webrat'
-  gem 'capybara'
+  gem 'database_cleaner'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
