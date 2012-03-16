@@ -28,7 +28,7 @@
 
   .ui-widget-footer
     #button
-      != icon_button 'New Task',
-        new_task_path,
-        { class: 'ui-icon ui-icon-pencil' },
-        { class: 'fg-button ui-button ui-state-default ui-corner-all edit-contact' }
+      = link_to(new_task_path, class: 'fg-button ui-button ui-state-default ui-corner-all') do
+        %span{ class: 'ui-icon ui-icon-pencil', style: 'float: left'}
+        New Task
+           
