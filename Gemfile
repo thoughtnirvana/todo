@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,12 +29,10 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem 'cover_me'
-  gem 'rspec-rails', "2.7.0"
-  gem 'rspec', "2.7.0"
+  gem 'rspec-rails'
+  gem 'rspec'
   gem 'webrat'
-  gem 'cucumber', :git => 'git://github.com/cucumber/cucumber.git'
-  gem 'cucumber-rails', :git => 'git://github.com/cucumber/cucumber-rails.git'
-  gem 'database_cleaner'
+  gem 'capybara'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
