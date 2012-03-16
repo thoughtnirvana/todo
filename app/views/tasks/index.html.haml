@@ -3,7 +3,11 @@
 
 %h3 Task List
 
-.ui-widget.grid-widget
+%p
+  .paginate
+    =paginate @tasks
+
+.ui-widget.grid-widget.task-index
   .ui-widget-header.ui-corner-top Listing Tasks
   .ui-widget-content
     %table
