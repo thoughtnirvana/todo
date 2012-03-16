@@ -1,0 +1,2025 @@
+<html>
+  <head>
+    <title>app/controllers/tasks_controller.rb</title>
+    
+    <link href="../../report.css?0.5583086294635716" media="screen" rel="stylesheet" type="text/css" />
+    <script src='../../jquery.js?0.8085939756008517'></script>
+    <script>
+      $(function() {
+
+        $('#toggle_test_file').click(function(e) {
+          e.preventDefault();
+          if ($('#main_file').hasClass('side_by_side')) {
+            $('#main_file').removeClass('side_by_side');
+          } else {
+            $('#main_file').addClass('side_by_side');
+          }
+        
+          $('#test_file').toggle();
+        });
+
+        $('#test_file').hide();
+        
+        function cleanString(str) {
+          return $.trim(str.replace(/<[^(<|>)]+>/gi, ''));
+        }
+        
+        $('.line_number').hover(function() {
+          $(this).attr('title', 'Line: ' + cleanString($(this).html()));
+        });
+        
+        $('.hit_number').hover(function() {
+          $(this).attr('title', 'Execution Count: ' + cleanString($(this).html()));
+        });
+        
+        $('.code_line').hover(function() {
+          $(this).attr('title', cleanString($(this).html()));
+        });
+        
+      });
+    </script>
+  </head>
+  <body>
+    <h1><a href="../../index.html">Coverage Report</a></h1>
+    
+    <table cellpadding='0' cellspacing='1'>
+      <tr class='header'>
+        <th>File</th>
+        <th>Lines</th>
+        <th>Lines Of Code</th>
+        <th>Untested Lines of Code</th>
+        <th>Tested %</th>
+      </tr>
+      <tr valign='top'>
+        <td>
+          app/controllers/tasks_controller.rb
+          
+            <br />
+            <a href='#' id='toggle_test_file'>spec/controllers/tasks_controller_spec.rb</a>
+          
+        </td>
+        <td>83</td>
+        <td>40</td>
+        <td>0</td>
+        <td>100.0%</td>
+      </tr>
+    </table>
+
+    <div>&nbsp;</div>
+    
+    <table cellpadding='0' cellspacing='1'>
+      <tr>
+        <th>Legend</th>
+      </tr>
+      <tr>
+        <td class='hit'>This line was executed.</td>
+      </tr>
+      <tr>
+        <td class='miss'>This line was not executed!</td>
+      </tr>
+      <tr>
+        <td class='never'>This line doesn't matter.</td>
+      </tr>
+    </table>
+    
+    <div>&nbsp;</div>
+
+    <div id='content'>
+      <div id='main_file'>
+        <table id='main'>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>1</td>
+              <td class='code_line'>
+                <pre>class TasksController < ApplicationController</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>2</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>3</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks.json</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>4</td>
+              <td class='code_line'>
+                <pre>  def index</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>5</td>
+              <td class='code_line'>
+                <pre>    @tasks = Task.page params[:page]</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>6</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>7</td>
+              <td class='code_line'>
+                <pre>    respond_to do |format|</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>8</td>
+              <td class='code_line'>
+                <pre>      format.html # index.html.erb</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>9</td>
+              <td class='code_line'>
+                <pre>      format.json { render json: @tasks }</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>10</td>
+              <td class='code_line'>
+                <pre>    end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>11</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>12</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>13</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks/1</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>14</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks/1.json</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>15</td>
+              <td class='code_line'>
+                <pre>  def show</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>16</td>
+              <td class='code_line'>
+                <pre>    @task = Task.find(params[:id])</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>17</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>18</td>
+              <td class='code_line'>
+                <pre>    respond_to do |format|</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>19</td>
+              <td class='code_line'>
+                <pre>      format.html # show.html.erb</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>20</td>
+              <td class='code_line'>
+                <pre>      format.json { render json: @task }</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>21</td>
+              <td class='code_line'>
+                <pre>    end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>22</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>23</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>24</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks/new</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>25</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks/new.json</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>26</td>
+              <td class='code_line'>
+                <pre>  def new</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>27</td>
+              <td class='code_line'>
+                <pre>    @task = Task.new</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>28</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>29</td>
+              <td class='code_line'>
+                <pre>    respond_to do |format|</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>30</td>
+              <td class='code_line'>
+                <pre>      format.html # new.html.erb</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>31</td>
+              <td class='code_line'>
+                <pre>      format.json { render json: @task }</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>32</td>
+              <td class='code_line'>
+                <pre>    end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>33</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>34</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>35</td>
+              <td class='code_line'>
+                <pre>  # GET /tasks/1/edit</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>36</td>
+              <td class='code_line'>
+                <pre>  def edit</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>37</td>
+              <td class='code_line'>
+                <pre>    @task = Task.find(params[:id])</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>38</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>39</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>40</td>
+              <td class='code_line'>
+                <pre>  # POST /tasks</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>41</td>
+              <td class='code_line'>
+                <pre>  # POST /tasks.json</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>42</td>
+              <td class='code_line'>
+                <pre>  def create</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>43</td>
+              <td class='code_line'>
+                <pre>    @task = Task.new(params[:task])</pre>
+              </td>
+              <td class='hit_number'>10</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>44</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>45</td>
+              <td class='code_line'>
+                <pre>    respond_to do |format|</pre>
+              </td>
+              <td class='hit_number'>10</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>46</td>
+              <td class='code_line'>
+                <pre>      if @task.save</pre>
+              </td>
+              <td class='hit_number'>10</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>47</td>
+              <td class='code_line'>
+                <pre>        format.html { redirect_to @task, notice: 'Task was successfully created.' }</pre>
+              </td>
+              <td class='hit_number'>12</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>48</td>
+              <td class='code_line'>
+                <pre>        format.json { render json: @task, status: :created, location: @task }</pre>
+              </td>
+              <td class='hit_number'>6</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>49</td>
+              <td class='code_line'>
+                <pre>      else</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>50</td>
+              <td class='code_line'>
+                <pre>        format.html { render action: "new" }</pre>
+              </td>
+              <td class='hit_number'>8</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>51</td>
+              <td class='code_line'>
+                <pre>        format.json { render json: @task.errors, status: :unprocessable_entity }</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>52</td>
+              <td class='code_line'>
+                <pre>      end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>53</td>
+              <td class='code_line'>
+                <pre>    end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>54</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>55</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>56</td>
+              <td class='code_line'>
+                <pre>  # PUT /tasks/1</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>57</td>
+              <td class='code_line'>
+                <pre>  # PUT /tasks/1.json</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>58</td>
+              <td class='code_line'>
+                <pre>  def update</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>59</td>
+              <td class='code_line'>
+                <pre>    @task = Task.find(params[:id])</pre>
+              </td>
+              <td class='hit_number'>10</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>60</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>61</td>
+              <td class='code_line'>
+                <pre>    respond_to do |format|</pre>
+              </td>
+              <td class='hit_number'>10</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>62</td>
+              <td class='code_line'>
+                <pre>      if @task.update_attributes(params[:task])</pre>
+              </td>
+              <td class='hit_number'>10</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>63</td>
+              <td class='code_line'>
+                <pre>        format.html { redirect_to @task, notice: 'Task was successfully updated.' }</pre>
+              </td>
+              <td class='hit_number'>8</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>64</td>
+              <td class='code_line'>
+                <pre>        format.json { head :no_content }</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>65</td>
+              <td class='code_line'>
+                <pre>      else</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>66</td>
+              <td class='code_line'>
+                <pre>        format.html { render action: "edit" }</pre>
+              </td>
+              <td class='hit_number'>12</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>67</td>
+              <td class='code_line'>
+                <pre>        format.json { render json: @task.errors, status: :unprocessable_entity }</pre>
+              </td>
+              <td class='hit_number'>6</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>68</td>
+              <td class='code_line'>
+                <pre>      end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>69</td>
+              <td class='code_line'>
+                <pre>    end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>70</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>71</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>72</td>
+              <td class='code_line'>
+                <pre>  # DELETE /tasks/1</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>73</td>
+              <td class='code_line'>
+                <pre>  # DELETE /tasks/1.json</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>74</td>
+              <td class='code_line'>
+                <pre>  def destroy</pre>
+              </td>
+              <td class='hit_number'>2</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>75</td>
+              <td class='code_line'>
+                <pre>    @task = Task.find(params[:id])</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>76</td>
+              <td class='code_line'>
+                <pre>    @task.destroy</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>77</td>
+              <td class='code_line'>
+                <pre></pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>78</td>
+              <td class='code_line'>
+                <pre>    respond_to do |format|</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>79</td>
+              <td class='code_line'>
+                <pre>      format.html { redirect_to tasks_url }</pre>
+              </td>
+              <td class='hit_number'>8</td>
+            </tr>
+          
+            <tr class="hit" data-hits='#{cov}'"">
+              <td class='line_number'>80</td>
+              <td class='code_line'>
+                <pre>      format.json { head :no_content }</pre>
+              </td>
+              <td class='hit_number'>4</td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>81</td>
+              <td class='code_line'>
+                <pre>    end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>82</td>
+              <td class='code_line'>
+                <pre>  end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+            <tr class="never" "">
+              <td class='line_number'>83</td>
+              <td class='code_line'>
+                <pre>end</pre>
+              </td>
+              <td class='hit_number'></td>
+            </tr>
+          
+        </table>
+      </div>
+      
+        <div id='test_file' class='side_by_side'>
+          <table id='test'>
+            
+            
+              <tr class="never">
+                <td class='line_number'>1</td>
+                <td class='code_line'>
+                  <pre>require 'spec_helper'</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>2</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>3</td>
+                <td class='code_line'>
+                  <pre># This spec was generated by rspec-rails when you ran the scaffold generator.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>4</td>
+                <td class='code_line'>
+                  <pre># It demonstrates how one might use RSpec to specify the controller code that</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>5</td>
+                <td class='code_line'>
+                  <pre># was generated by Rails when you ran the scaffold generator.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>6</td>
+                <td class='code_line'>
+                  <pre>#</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>7</td>
+                <td class='code_line'>
+                  <pre># It assumes that the implementation code is generated by the rails scaffold</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>8</td>
+                <td class='code_line'>
+                  <pre># generator.  If you are using any extension libraries to generate different</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>9</td>
+                <td class='code_line'>
+                  <pre># controller code, this generated spec may or may not pass.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>10</td>
+                <td class='code_line'>
+                  <pre>#</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>11</td>
+                <td class='code_line'>
+                  <pre># It only uses APIs available in rails and/or rspec-rails.  There are a number</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>12</td>
+                <td class='code_line'>
+                  <pre># of tools you can use to make these specs even more expressive, but we're</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>13</td>
+                <td class='code_line'>
+                  <pre># sticking to rails and rspec-rails APIs to keep things simple and stable.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>14</td>
+                <td class='code_line'>
+                  <pre>#</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>15</td>
+                <td class='code_line'>
+                  <pre># Compared to earlier versions of this generator, there is very limited use of</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>16</td>
+                <td class='code_line'>
+                  <pre># stubs and message expectations in this spec.  Stubs are only used when there</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>17</td>
+                <td class='code_line'>
+                  <pre># is no simpler way to get a handle on the object needed for the example.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>18</td>
+                <td class='code_line'>
+                  <pre># Message expectations are only used when there is no simpler way to specify</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>19</td>
+                <td class='code_line'>
+                  <pre># that an instance is receiving a specific message.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>20</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>21</td>
+                <td class='code_line'>
+                  <pre>describe TasksController do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>22</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>23</td>
+                <td class='code_line'>
+                  <pre>  # This should return the minimal set of attributes required to create a valid</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>24</td>
+                <td class='code_line'>
+                  <pre>  # Task. As you add validations to Task, be sure to</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>25</td>
+                <td class='code_line'>
+                  <pre>  # update the return value of this method accordingly.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>26</td>
+                <td class='code_line'>
+                  <pre>  def valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>27</td>
+                <td class='code_line'>
+                  <pre>    { :name => 'Task', :description => "Desc", :deadline => DateTime.now }</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>28</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>29</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>30</td>
+                <td class='code_line'>
+                  <pre>  describe "GET index" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>31</td>
+                <td class='code_line'>
+                  <pre>    it "assigns all tasks as @tasks" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>32</td>
+                <td class='code_line'>
+                  <pre>      task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>33</td>
+                <td class='code_line'>
+                  <pre>      get :index</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>34</td>
+                <td class='code_line'>
+                  <pre>      assigns(:tasks).should eq([task])</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>35</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>36</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>37</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>38</td>
+                <td class='code_line'>
+                  <pre>  describe "GET show" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>39</td>
+                <td class='code_line'>
+                  <pre>    it "assigns the requested task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>40</td>
+                <td class='code_line'>
+                  <pre>      task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>41</td>
+                <td class='code_line'>
+                  <pre>      get :show, :id => task.id</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>42</td>
+                <td class='code_line'>
+                  <pre>      assigns(:task).should eq(task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>43</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>44</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>45</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>46</td>
+                <td class='code_line'>
+                  <pre>  describe "GET new" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>47</td>
+                <td class='code_line'>
+                  <pre>    it "assigns a new task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>48</td>
+                <td class='code_line'>
+                  <pre>      get :new</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>49</td>
+                <td class='code_line'>
+                  <pre>      assigns(:task).should be_a_new(Task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>50</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>51</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>52</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>53</td>
+                <td class='code_line'>
+                  <pre>  describe "GET edit" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>54</td>
+                <td class='code_line'>
+                  <pre>    it "assigns the requested task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>55</td>
+                <td class='code_line'>
+                  <pre>      task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>56</td>
+                <td class='code_line'>
+                  <pre>      get :edit, :id => task.id</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>57</td>
+                <td class='code_line'>
+                  <pre>      assigns(:task).should eq(task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>58</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>59</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>60</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>61</td>
+                <td class='code_line'>
+                  <pre>  describe "POST create" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>62</td>
+                <td class='code_line'>
+                  <pre>    describe "with valid params" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>63</td>
+                <td class='code_line'>
+                  <pre>      it "creates a new Task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>64</td>
+                <td class='code_line'>
+                  <pre>        expect {</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>65</td>
+                <td class='code_line'>
+                  <pre>          post :create, :task => valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>66</td>
+                <td class='code_line'>
+                  <pre>        }.to change(Task, :count).by(1)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>67</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>68</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>69</td>
+                <td class='code_line'>
+                  <pre>      it "assigns a newly created task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>70</td>
+                <td class='code_line'>
+                  <pre>        post :create, :task => valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>71</td>
+                <td class='code_line'>
+                  <pre>        assigns(:task).should be_a(Task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>72</td>
+                <td class='code_line'>
+                  <pre>        assigns(:task).should be_persisted</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>73</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>74</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>75</td>
+                <td class='code_line'>
+                  <pre>      it "redirects to the created task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>76</td>
+                <td class='code_line'>
+                  <pre>        post :create, :task => valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>77</td>
+                <td class='code_line'>
+                  <pre>        response.should redirect_to(Task.last)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>78</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>79</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>80</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>81</td>
+                <td class='code_line'>
+                  <pre>    describe "with invalid params" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>82</td>
+                <td class='code_line'>
+                  <pre>      it "assigns a newly created but unsaved task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>83</td>
+                <td class='code_line'>
+                  <pre>        # Trigger the behavior that occurs when invalid params are submitted</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>84</td>
+                <td class='code_line'>
+                  <pre>        Task.any_instance.stub(:save).and_return(false)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>85</td>
+                <td class='code_line'>
+                  <pre>        post :create, :task => {}</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>86</td>
+                <td class='code_line'>
+                  <pre>        assigns(:task).should be_a_new(Task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>87</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>88</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>89</td>
+                <td class='code_line'>
+                  <pre>      it "re-renders the 'new' template" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>90</td>
+                <td class='code_line'>
+                  <pre>        # Trigger the behavior that occurs when invalid params are submitted</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>91</td>
+                <td class='code_line'>
+                  <pre>        Task.any_instance.stub(:save).and_return(false)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>92</td>
+                <td class='code_line'>
+                  <pre>        post :create, :task => {}</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>93</td>
+                <td class='code_line'>
+                  <pre>        response.should render_template("new")</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>94</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>95</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>96</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>97</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>98</td>
+                <td class='code_line'>
+                  <pre>  describe "PUT update" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>99</td>
+                <td class='code_line'>
+                  <pre>    describe "with valid params" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>100</td>
+                <td class='code_line'>
+                  <pre>      it "updates the requested task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>101</td>
+                <td class='code_line'>
+                  <pre>        task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>102</td>
+                <td class='code_line'>
+                  <pre>        # Assuming there are no other tasks in the database, this</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>103</td>
+                <td class='code_line'>
+                  <pre>        # specifies that the Task created on the previous line</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>104</td>
+                <td class='code_line'>
+                  <pre>        # receives the :update_attributes message with whatever params are</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>105</td>
+                <td class='code_line'>
+                  <pre>        # submitted in the request.</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>106</td>
+                <td class='code_line'>
+                  <pre>        Task.any_instance.should_receive(:update_attributes).with({'these' => 'params'})</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>107</td>
+                <td class='code_line'>
+                  <pre>        put :update, :id => task.id, :task => {'these' => 'params'}</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>108</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>109</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>110</td>
+                <td class='code_line'>
+                  <pre>      it "assigns the requested task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>111</td>
+                <td class='code_line'>
+                  <pre>        task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>112</td>
+                <td class='code_line'>
+                  <pre>        put :update, :id => task.id, :task => valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>113</td>
+                <td class='code_line'>
+                  <pre>        assigns(:task).should eq(task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>114</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>115</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>116</td>
+                <td class='code_line'>
+                  <pre>      it "redirects to the task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>117</td>
+                <td class='code_line'>
+                  <pre>        task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>118</td>
+                <td class='code_line'>
+                  <pre>        put :update, :id => task.id, :task => valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>119</td>
+                <td class='code_line'>
+                  <pre>        response.should redirect_to(task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>120</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>121</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>122</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>123</td>
+                <td class='code_line'>
+                  <pre>    describe "with invalid params" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>124</td>
+                <td class='code_line'>
+                  <pre>      it "assigns the task as @task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>125</td>
+                <td class='code_line'>
+                  <pre>        task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>126</td>
+                <td class='code_line'>
+                  <pre>        # Trigger the behavior that occurs when invalid params are submitted</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>127</td>
+                <td class='code_line'>
+                  <pre>        Task.any_instance.stub(:save).and_return(false)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>128</td>
+                <td class='code_line'>
+                  <pre>        put :update, :id => task.id, :task => {}</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>129</td>
+                <td class='code_line'>
+                  <pre>        assigns(:task).should eq(task)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>130</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>131</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>132</td>
+                <td class='code_line'>
+                  <pre>      it "re-renders the 'edit' template" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>133</td>
+                <td class='code_line'>
+                  <pre>        task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>134</td>
+                <td class='code_line'>
+                  <pre>        # Trigger the behavior that occurs when invalid params are submitted</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>135</td>
+                <td class='code_line'>
+                  <pre>        Task.any_instance.stub(:save).and_return(false)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>136</td>
+                <td class='code_line'>
+                  <pre>        put :update, :id => task.id, :task => {}</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>137</td>
+                <td class='code_line'>
+                  <pre>        response.should render_template("edit")</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>138</td>
+                <td class='code_line'>
+                  <pre>      end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>139</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>140</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>141</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>142</td>
+                <td class='code_line'>
+                  <pre>  describe "DELETE destroy" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>143</td>
+                <td class='code_line'>
+                  <pre>    it "destroys the requested task" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>144</td>
+                <td class='code_line'>
+                  <pre>      task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>145</td>
+                <td class='code_line'>
+                  <pre>      expect {</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>146</td>
+                <td class='code_line'>
+                  <pre>        delete :destroy, :id => task.id</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>147</td>
+                <td class='code_line'>
+                  <pre>      }.to change(Task, :count).by(-1)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>148</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>149</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>150</td>
+                <td class='code_line'>
+                  <pre>    it "redirects to the tasks list" do</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>151</td>
+                <td class='code_line'>
+                  <pre>      task = Task.create! valid_attributes</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>152</td>
+                <td class='code_line'>
+                  <pre>      delete :destroy, :id => task.id</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>153</td>
+                <td class='code_line'>
+                  <pre>      response.should redirect_to(tasks_url)</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>154</td>
+                <td class='code_line'>
+                  <pre>    end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>155</td>
+                <td class='code_line'>
+                  <pre>  end</pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>156</td>
+                <td class='code_line'>
+                  <pre></pre>
+                </td>
+              </tr>
+              
+            
+              <tr class="never">
+                <td class='line_number'>157</td>
+                <td class='code_line'>
+                  <pre>end</pre>
+                </td>
+              </tr>
+              
+            
+          </table>
+        </div>
+      
+    </div>
+    
+    <p>Generated on: 2012-03-16 09:08:17 +0530</p>
+  </body>
+</html>
