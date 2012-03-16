@@ -9,3 +9,4 @@ To run:
 
 Exec `rake spec` to test the app.
 
+Run `rake cucumber` for integrated tests.
