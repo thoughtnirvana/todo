@@ -25,7 +25,7 @@ development:
 #  database: db/test.sqlite3
 #  pool: 5
 #  timeout: 5000
-test:
+test: &test
   username: root
   password: foobar
   adapter: mysql2
@@ -39,3 +39,6 @@ test:
 #  database: db/production.sqlite3
 #  pool: 5
 #  timeout: 5000
+
+cucumber:
+  <<: *test
