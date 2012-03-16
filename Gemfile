@@ -8,6 +8,10 @@ gem 'rails', '3.2.2'
 gem 'mysql2'
 gem 'haml-rails'
 gem 'kaminari'
+gem 'annotate'
+
+# To use debugger
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,6 +34,7 @@ group :test, :development do
   gem 'webrat'
   gem 'cucumber', :git => 'git://github.com/cucumber/cucumber.git'
   gem 'cucumber-rails', :git => 'git://github.com/cucumber/cucumber-rails.git'
+  gem 'database_cleaner'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -43,5 +48,3 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'
