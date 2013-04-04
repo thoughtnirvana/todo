@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "tasks/index.html.erb" do
+describe "tasks/index.html.haml" do
   before(:each) do
     @task = Task.create!(:name => "Task1", :description => "Desc1", :deadline => DateTime.now)
     assign(:tasks, Task.page(1))
