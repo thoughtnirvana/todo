@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     @tasks = Task.page params[:page]
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :handlers => [:erb] }
       format.json { render json: @tasks }
     end
   end

@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag 'tasks' %>
+<%= javascript_include_tag "tasks" %>
+
+<h3>Task List (erb)</h3>
+
+<p>
+  <div class="paginate">
+    <%= paginate @tasks %>
+  </div>
+</p>
+
+<div class="ui-widget grid-widget task-index">
+  <div class="ui-widget-header ui-corner-top">Listing Tasks</div>
+  <div class="ui-widget-content">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Deadline</th>
+        <th>Completed</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.name %></td>
+          <td><%= task.description %></td>
+          <td><%= task.deadline %></td>
+          <td class="colored"><%= task.completed %></td>
+          <td><%= link_to 'Show', task %></td>
+          <td><%= link_to 'Edit', edit_task_path(task) %></td>
+          <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+   </div>
+
+
+  <div class="ui-widget-footer">
+    <div id="button">
+      <%= link_to(new_task_path, class: 'fg-button ui-button ui-state-default ui-corner-all') do %>
+        <span class="ui-icon ui-icon-pencil" style="float: left;"></span>
+        New Task
+      <% end %>
+  </div>
+</div>
