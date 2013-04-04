@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(:version => 20120313212246) do
     t.string   "name"
     t.text     "description"
     t.datetime "deadline"
-    t.boolean  "completed"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.boolean  "completed",   :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
 end
