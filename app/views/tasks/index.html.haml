@@ -1,7 +1,7 @@
 = stylesheet_link_tag 'tasks'
 = javascript_include_tag "tasks"
 
-%h3 Task List
+%h3 Task List (haml)
 
 %p
   .paginate
@@ -35,4 +35,4 @@
       = link_to(new_task_path, class: 'fg-button ui-button ui-state-default ui-corner-all') do
         %span{ class: 'ui-icon ui-icon-pencil', style: 'float: left'}
         New Task
-           
+

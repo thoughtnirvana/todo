@@ -33,6 +33,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'ruby-debug19'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
