@@ -9,7 +9,7 @@ describe "tasks/index.html.haml" do
   it "renders a list of tasks" do
     render
 
-    rendered.should have_selector('.task-index')
+    rendered.should have_selector('.task')
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => @task.name.to_s
     assert_select "tr>td", :text => @task.description.to_s
@@ -23,6 +23,6 @@ describe "tasks/index.html.haml" do
     rendered.should have_selector('#button')
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "a", :text => "New Task", :count => 1 
+    assert_select "a", :text => "New Task", :count => 1
   end
 end
