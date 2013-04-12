@@ -2,10 +2,9 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.page params[:page]
-
+    @tasks = Task.search(params[:search_term], params[:page])
     respond_to do |format|
-      format.html { render :handlers => [:erb] }
+      format.html { render :handlers => [:haml] }
       format.json { render json: @tasks }
     end
   end

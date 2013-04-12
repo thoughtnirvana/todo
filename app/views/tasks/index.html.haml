@@ -7,9 +7,15 @@
   .paginate
     =paginate @tasks
 
-.ui-widget.grid-widget.task-index
-  .ui-widget-header.ui-corner-top Listing Tasks
-  .ui-widget-content
+.ui-search-box.ui-widget.account-ui-search-box
+  .ui-widget-header.ui-corner-top Search For Task
+  .ui-widget-content.search-box-content
+    =form_tag tasks_path, :method => "get" do
+      .search
+        = text_field_tag :search_term
+        =submit_tag "Search", :name => nil,
+          :class => 'fg-button ui-button ui-state-default ui-corner-all',
+          :id => 'tasks-search-button'
     %table
       %tr
         %th Name
@@ -19,16 +25,19 @@
         %th
         %th
         %th
-
-      - @tasks.each do |task|
+      - if @tasks and @tasks.length > 0
+        - @tasks.each do |task|
+          %tr
+            %td= task.name
+            %td= task.description
+            %td= task.deadline
+            %td.colored= task.completed
+            %td= link_to 'Show', task
+            %td= link_to 'Edit', edit_task_path(task)
+            %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+      - else
         %tr
-          %td= task.name
-          %td= task.description
-          %td= task.deadline
-          %td.colored= task.completed
-          %td= link_to 'Show', task
-          %td= link_to 'Edit', edit_task_path(task)
-          %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+          %td= "No Task Found."
 
   .ui-widget-footer
     #button
