@@ -12,32 +12,31 @@
   .ui-widget-content.search-box-content
     =form_tag tasks_path, :method => "get" do
       .search
-        = text_field_tag :search_term
+        = text_field_tag :search_term, params[:search_term]
         =submit_tag "Search", :name => nil,
           :class => 'fg-button ui-button ui-state-default ui-corner-all',
           :id => 'tasks-search-button'
-    %table
-      %tr
-        %th Name
-        %th Description
-        %th Deadline
-        %th Completed
-        %th
-        %th
-        %th
-      - if @tasks and @tasks.length > 0
-        - @tasks.each do |task|
-          %tr
-            %td= task.name
-            %td= task.description
-            %td= task.deadline
-            %td.colored= task.completed
-            %td= link_to 'Show', task
-            %td= link_to 'Edit', edit_task_path(task)
-            %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
-      - else
+    - if @tasks and @tasks.length > 0
+      %table
         %tr
-          %td= "No Task Found."
+          %th Name
+          %th Description
+          %th Deadline
+          %th Completed
+          %th
+          %th
+          %th
+          - @tasks.each do |task|
+            %tr.task
+              %td.name= task.name
+              %td.description= task.description
+              %td= task.deadline
+              %td.colored= task.completed
+              %td= link_to 'Show', task
+              %td= link_to 'Edit', edit_task_path(task)
+              %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+    - else
+      %strong No Task Found
 
   .ui-widget-footer
     #button
